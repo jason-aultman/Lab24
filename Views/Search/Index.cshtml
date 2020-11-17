@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model SearchModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div >
+        <form style="float:left; border:3px solid black; padding:10px" asp-action="SearchResultTitle">
+            <h3>Search by title keyword</h3>
+            <input asp-for="@Model.Title" />
+            <input type="submit" />
+        </form>
+    </div>
+    <div>
+        <form style="float:right; border:3px solid black; padding:10px" asp-action="SearchResultGenre">
+            <h3>
+                Search by genre
+            </h3>
+            <select asp-for="@Model.genres" asp-items="Html.GetEnumSelectList<Genres>()"></select>
+            <input type="submit" />
+        </form>
+    </div>
+</body>
+</html>

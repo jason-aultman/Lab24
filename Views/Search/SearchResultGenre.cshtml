@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model SearchResultGenre
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchResultGenre</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <hr />
+    @{
+        foreach (Movies m in Model.MovieResults)
+        {
+        <div>
+            @Html.DisplayFor(_ => m.Title)
+        </div>
+        }
+    }
+</body>
+</html>

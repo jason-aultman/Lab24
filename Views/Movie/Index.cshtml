@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model MovieModel;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <header>
+        <h1 style="text-align:center">Movie Registration </h1>
+    </header>
+    <hr />
+    <div style="display:block; text-align:center">
+        <form asp-action="Register" method="post" style="justify-items:left">
+            <div>
+                <label for="ID" id="ID">ID</label>
+                <input name="ID" id="ID" asp-for="@Model.ID" />
+            </div>
+            <hr />
+            <div>
+                <label id="Title">Title</label>
+                <input id="Title" asp-for="@Model.Title" />
+            </div>
+            <hr />
+            <div>
+                <label id="Genre">Genre</label>
+                <select asp-for="@Model.Genre" asp-items="Html.GetEnumSelectList<Genres>()"></select>
+            </div>
+            <hr />
+            <div>
+                <label id="Year">Year</label>
+                <input id="Year" asp-for="@Model.Year" />
+            </div>
+            <hr />
+            <div>
+                <label id="Actors">Actors</label>
+                <input id="Actors" asp-for="@Model.Actors" />
+
+            </div>
+            <hr />
+            <div>
+                <label id="Directors">Directors</label>
+                <input id="Directors" asp-for="@Model.Directors" />
+            </div>
+            <hr />
+            <div>
+                <button type="submit">Click to submit</button>
+            </div>
+
+        </form>
+    </div>
+    
+</body>
+
+</html>

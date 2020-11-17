@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Movies
+
+
+<h1>Checkout</h1>
+
+@Html.DisplayForModel();
+
+@{ 
+
+}
+
+<h3>Would you like to check this movie out?</h3>
+<div>
+    <form asp-action="ReturnToList">
+        <input type="submit" value="No" />
+    </form>
+    <form asp-controller = "CheckOut" asp-action="CheckOut">
+        <input type="submit" name ="Id" value="@Model.Id"/>
+    </form>
+</div>
+
+
+
